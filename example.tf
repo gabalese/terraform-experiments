@@ -25,7 +25,6 @@ resource "aws_elb" "web" {
     target = "HTTP:80/"
     interval = 30
   }
-	
 }
 
 resource "aws_autoscaling_group" "my_asg" {

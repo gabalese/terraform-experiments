@@ -1,0 +1,30 @@
+{
+	"variable": {
+		"access_key": {},
+		"secret_key": {}
+	},
+
+	"provider": {
+			"aws": {
+				"access_key": "${var.access_key}",
+				"secret_key": "${var.secret_key}",
+				"region": "eu-west-1"
+		}
+    },
+
+    "resource": {
+    	"aws_elb": {
+            "my_elb": {
+    		"name": "example-elb",
+    		"availability_zones": ["eu-west-1a", "eu-west-1b"],
+
+    		"listener": {
+    			"instance_port": 80,
+    			"instance_protocol": "http",
+    			"lb_port": 80,
+    			"lb_protocol": "http"
+    		}
+          }
+        }
+    }
+}
